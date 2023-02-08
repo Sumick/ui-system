@@ -18,7 +18,7 @@ export const Button = ({
   const variantClass =
     variant === "primary" ? styles.primary : styles.secondary;
 
-  const getDisabledClassForSpecificVariant = (): string => {
+  const getDisabledClassForSpecificVariant = (): string | void => {
     if (disabled) {
       return variant === "primary"
         ? styles.disabledPrimary
