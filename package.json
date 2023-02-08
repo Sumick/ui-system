@@ -1,6 +1,6 @@
 {
   "name": "jakub-wasowski-ui-system",
-  "version": "0.0.0",
+  "version": "0.0.3",
   "author": "Nerdbord",
   "license": "MIT",
   "main": "./dist/index.js",
@@ -13,9 +13,6 @@
     "clean": "rimraf dist/",
     "copy-files": "copyfiles -u 1 src/**/*.css dist/",
     "build": "yarn clean && tsc -b && yarn copy-files"
-  },
-  "engines": {
-    "node": ">=16.0.0 <17.0.0"
   },
   "publishConfig": {
     "registry": "http://139.59.154.199:4873"
