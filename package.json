@@ -1,16 +1,18 @@
 {
-  "private": true,
-  "name": "ui-system",
-  "version": "0.0.0",
+  "name": "jakub-wasowski-ui-system",
+  "version": "0.0.3",
   "author": "Nerdbord",
   "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "test": "jest",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
-  },
-  "engines" : {
-    "node" : ">=16.0.0 <17.0.0"
+    "build-storybook": "build-storybook",
+    "clean": "rimraf dist/",
+    "copy-files": "copyfiles -u 1 src/**/*.css dist/",
+    "build": "yarn clean && tsc -b && yarn copy-files"
   },
   "publishConfig": {
     "registry": "http://139.59.154.199:4873"
@@ -41,9 +43,11 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
+    "copyfiles": "^2.4.1",
     "preact": "^10.11.3",
     "preact-render-to-string": "^5.2.6",
-    "preact-router": "^3.2.1"
+    "preact-router": "^3.2.1",
+    "rimraf": "^4.1.2"
   },
   "jest": {
     "preset": "jest-preset-preact"
